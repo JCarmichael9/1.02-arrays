@@ -94,6 +94,12 @@ document.getElementById('btnForEach').addEventListener('click', forEachFoods)
   - Display the results as an unordered list (<ul>)
 */
 function uppercaseList () {
+  const upperCase = foods.map(food => food.toUpperCase())
+  let output = ''
+  for (const food of upperCase) {
+    output += `<p>${food}</p>`
+  }
+  render(output)
   // TODO: Write your code here
 }
 
@@ -137,6 +143,17 @@ function randomFoodPicker () {
   - Display results in the format: Food — X letters
 */
 function wordLengths () {
+
+let output = ''
+for (const food of foods) {
+  const foodLength = food.length
+  output += `<p>${food} - ${foodLength} lettrs</p>`
+}
+
+render(output)
+
+
+
   // TODO: Write your code here
 }
 
@@ -144,5 +161,4 @@ function wordLengths () {
 // (Make sure to add matching buttons in index.html)
 document.getElementById('btnUppercase').addEventListener('click', uppercaseList)
 document.getElementById('btnReverse').addEventListener('click', reverseList)
-document.getElementById('btnRandom').addEventListener('click', randomFoodPicker)
 document.getElementById('btnLengths').addEventListener('click', wordLengths)
